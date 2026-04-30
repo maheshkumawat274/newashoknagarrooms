@@ -83,7 +83,7 @@ export default function LeadForm({ className, onSuccess }: LeadFormProps) {
   };
 
   return (
-    <div className={cn("bg-white p-6 rounded-2xl shadow-xl border border-gray-100", className)}>
+    <div className={cn("bg-white p-3 md:p-6 rounded-2xl shadow-xl border border-gray-100", className)}>
       <h3 className="text-2xl font-bold mb-6 text-primary">Get Instant Options</h3>
       
       <form onSubmit={handleSubmit} className="space-y-4">

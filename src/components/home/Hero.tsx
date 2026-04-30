@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Home as HomeIcon, MapPin, Search, ChevronRight, Sparkles } from 'lucide-react';
+import { Home as HomeIcon, MapPin, Search, ChevronRight, Sparkles, MessageCircle, ArrowRight } from 'lucide-react';
 import LeadForm from './LeadForm';
+import { ADMIN_PHONE } from '@/src/lib/utils';
 
 const heroImages = [
   "/imgs/1bhk.avif",
@@ -20,12 +21,26 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, []);
 
+  // WhatsApp handler
+  const handleWhatsApp = () => {
+    const message = "Hi, I need information about rooms in New Ashok Nagar.";
+    window.open(`https://wa.me/${ADMIN_PHONE}?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
+  // Get Started handler
+  const handleGetStarted = () => {
+    const element = document.getElementById('listings');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-[90vh] py-5 flex items-center overflow-hidden bg-secondary">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 transform translate-x-20 hidden lg:block" />
       
-      <div className="container mx-auto px-4 relative z-10 py-20 lg:py-0">
+      <div className="container mx-auto px-4 relative z-10 py-10 lg:py-0">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-1/2 text-center lg:text-left">
             <motion.div
@@ -56,6 +71,32 @@ export default function Hero() {
               Stop wandering door-to-door. Get the best, verified room options in New Ashok Nagar directly on your WhatsApp.
             </motion.p>
 
+            {/* ✅ CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25 }}
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12"
+            >
+              {/* WhatsApp CTA Button */}
+              <button
+                onClick={handleWhatsApp}
+                className="bg-green-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:bg-green-600 transition-all hover:scale-105 shadow-lg shadow-green-200 w-full sm:w-auto justify-center"
+              >
+                <MessageCircle size={22} />
+                Chat on WhatsApp
+              </button>
+
+              {/* Get Started CTA Button */}
+              <button
+                onClick={handleGetStarted}
+                className="bg-primary text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:bg-opacity-90 transition-all hover:scale-105 shadow-lg shadow-primary/20 w-full sm:w-auto justify-center"
+              >
+                <ArrowRight size={22} />
+                Get Started Now
+              </button>
+            </motion.div>
+
             {/* Mobile Image Slider */}
             <div className="lg:hidden w-full mb-10 rounded-3xl overflow-hidden shadow-2xl ring-8 ring-white relative h-64">
               <AnimatePresence mode="wait">
@@ -77,7 +118,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-12"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4"
             >
               <div className="flex items-center gap-2">
                 <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
