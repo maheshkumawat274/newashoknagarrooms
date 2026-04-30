@@ -75,7 +75,7 @@ export default function Properties() {
   };
 
   return (
-    <div className="bg-secondary min-h-screen">
+    <div className="bg-secondary min-h-screen relative">
       {/* Search Hero Section */}
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4">

@@ -16,7 +16,7 @@ export default function Contact() {
       animate={{ opacity: 1, y: 0 }}
       className="py-24 bg-white"
     >
-      <div className="container mx-auto px-4 text-center lg:text-left">
+      <div className="container relative mx-auto px-4 text-center lg:text-left">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
             <h1 className="text-5xl font-bold mb-4">Contact Our Team</h1>

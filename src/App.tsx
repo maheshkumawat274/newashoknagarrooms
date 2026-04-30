@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
-import WhatsAppButton from './components/common/WhatsAppButton';
+// import WhatsAppButton from './components/common/WhatsAppButton';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
@@ -23,7 +23,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
-        <WhatsAppButton />
+        {/* <WhatsAppButton /> */}
       </div>
     </Router>
   );

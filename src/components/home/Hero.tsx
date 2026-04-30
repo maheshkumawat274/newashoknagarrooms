@@ -36,7 +36,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[90vh] py-5 flex items-center overflow-hidden bg-secondary">
+    <section className="relative min-h-[90vh] py-5  flex items-center overflow-hidden bg-secondary">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 transform translate-x-20 hidden lg:block" />
       
