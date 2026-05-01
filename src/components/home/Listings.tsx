@@ -113,7 +113,7 @@ export default function Listings() {
         <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
           <div className="max-w-xl">
             <h2 className="text-4xl font-bold mb-4">Latest Verified Listings</h2>
-            <p className="text-gray-600">Fresh properties added every 24 hours. Directly from owners with zero brokerage fees.</p>
+            <p className="text-gray-600">Fresh properties added every 24 hours. Directly from owners.</p>
           </div>
           <Link 
             to="/properties" 
@@ -123,7 +123,7 @@ export default function Listings() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {properties.map((listing, index) => (
             <motion.div
               key={listing.id}

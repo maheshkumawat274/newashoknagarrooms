@@ -4,6 +4,7 @@ import HowItWorks from '../components/home/HowItWorks';
 import { motion } from 'motion/react';
 import { Shield, Sparkles, Clock, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import NearbyLocations from '../components/home/NearLocations';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <TrustBanner />
       <Listings />
+      <NearbyLocations/>
       <HowItWorks />
       <CTASection />
     </motion.div>

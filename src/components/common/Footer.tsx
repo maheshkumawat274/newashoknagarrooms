@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="font-display font-bold text-xl tracking-tight text-white italic">New Ashok Nagar Rooms</span>
             </Link>
             <p className="text-sm leading-relaxed mb-8">
-              Helping students and working professionals find comfortable and affordable living spaces in New Ashok Nagar, Delhi. No brokers, no hidden fees.
+              Helping students and working professionals find comfortable and affordable living spaces in New Ashok Nagar, Delhi.
             </p>
             {/* <div className="flex gap-4">
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors cursor-pointer"><Facebook size={20} /></div>
