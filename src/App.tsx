@@ -8,6 +8,8 @@ import Admin from './pages/Admin';
 import Properties from './pages/Properties';
 import ScrollTop from './components/common/ScrollTop';
 import Navbarupdate from './components/common/updatenavbar';
+import AboutPage from './pages/about';
+import LandingPage from './components/landingpage/Landingpage';
 
 export default function App() {
   return (
@@ -18,8 +20,11 @@ export default function App() {
         <main className="flex-grow ">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<AboutPage/>} />
             <Route path="/properties" element={<Properties />} />
             <Route path="/contact" element={<Contact />} />
+             {/* Dynamic SEO Landing Pages */}
+        <Route path="/:slug" element={<LandingPage />} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>

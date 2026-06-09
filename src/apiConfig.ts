@@ -9,7 +9,7 @@
 // If you are using PHP locally, set this to true and provide the URL
 const USE_PHP_BACKEND = true; 
 const PHP_API_BASE = 'https://newashoknagarrooms.in/backend'; // Change to your local PHP server URL if needed
-
+// const PHP_API_BASE = 'http://localhost:8000/'; // Change to your local PHP server URL if needed
 export const API_URLS = {
   GET_LEADS: USE_PHP_BACKEND ? `${PHP_API_BASE}/leads.php` : '/api/getLeads',
   ADD_LEAD: USE_PHP_BACKEND ? `${PHP_API_BASE}/leads.php` : '/api/addLead',

@@ -5,6 +5,8 @@ import { motion } from 'motion/react';
 import { Shield, Sparkles, Clock, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import NearbyLocations from '../components/home/NearLocations';
+import AboutUs from '../components/about/Aboutus';
+import AboutUsShort from '../components/home/homeabout';
 
 export default function Home() {
   return (
@@ -14,8 +16,10 @@ export default function Home() {
       className="flex flex-col"
     >
       <Hero />
+      
       <TrustBanner />
       <Listings />
+      <AboutUsShort/>
       <NearbyLocations/>
       <HowItWorks />
       <CTASection />

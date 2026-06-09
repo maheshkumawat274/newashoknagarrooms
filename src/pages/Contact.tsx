@@ -68,7 +68,7 @@ export default function Contact() {
                     <ShieldCheck size={18} className="text-primary" />
                     <span className="text-xs font-bold uppercase tracking-widest text-primary">Trust Factor</span>
                   </div>
-                  <h4 className="text-xl font-bold">Verified by 5,000+</h4>
+                  <h4 className="text-xl font-bold">Verified by 10+</h4>
                   <p className="text-gray-500 text-sm">Working professionals trust our curated listings daily.</p>
                 </div>
               </div>

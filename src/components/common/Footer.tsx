@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
+import { getAllSEOLinks } from '../landingpagedata/data';
 
 export default function Footer() {
+  const seoLinks = getAllSEOLinks();
+
   return (
     <footer className="bg-gray-950 text-gray-400 py-20 border-t border-white/5">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          
+          {/* Column 1 - Brand */}
           <div>
             <Link to="/" className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-primary text-white rounded-xl flex items-center justify-center font-bold text-xl">
@@ -16,44 +21,68 @@ export default function Footer() {
             <p className="text-sm leading-relaxed mb-8">
               Helping students and working professionals find comfortable and affordable living spaces in New Ashok Nagar, Delhi.
             </p>
-            {/* <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors cursor-pointer"><Facebook size={20} /></div>
-              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors cursor-pointer"><Instagram size={20} /></div>
-              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors cursor-pointer"><Twitter size={20} /></div>
-            </div> */}
           </div>
 
+          {/* Column 2 - Quick Links */}
           <div>
             <h4 className="text-white font-bold mb-6">Quick Links</h4>
-            <ul className="space-y-4 text-sm">
-              <li><Link to="/contact" className="hover:text-primary transition-colors">Find a Room</Link></li>
-              <li><Link to="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
-              <li><Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/properties" className="hover:text-primary transition-colors flex items-center gap-2 group"><ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />Find a Room</Link></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors flex items-center gap-2 group"><ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors flex items-center gap-2 group"><ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />Contact Us</Link></li>
+              <li><Link to="/terms" className="hover:text-primary transition-colors flex items-center gap-2 group"><ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />Terms of Service</Link></li>
+              <li><Link to="/privacy-policy" className="hover:text-primary transition-colors flex items-center gap-2 group"><ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />Privacy Policy</Link></li>
             </ul>
           </div>
 
+          {/* Column 3 - Popular Searches (First 3 SEO Links) */}
           <div>
-            <h4 className="text-white font-bold mb-6">Popular Areas</h4>
-            <ul className="space-y-4 text-sm">
-              <li><a href="/" className="hover:text-primary transition-colors">Block A, East Delhi</a></li>
-              <li><a href="/" className="hover:text-primary transition-colors">Block B, Near Metro</a></li>
-              <li><a href="/" className="hover:text-primary transition-colors">Block C, Main Market</a></li>
-              <li><a href="/" className="hover:text-primary transition-colors">Near Vasundhara Enclave</a></li>
+            <h4 className="text-white font-bold mb-6">Popular Searches</h4>
+            <ul className="space-y-3 text-sm">
+              {seoLinks.slice(0, 3).map((link, idx) => (
+                <li key={idx}>
+                  <Link to={`/${link.slug}`} className="hover:text-primary transition-colors flex items-center gap-2 group">
+                    <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                    <span className="text-sm">{link.name}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Column 4 - More Searches (Next 3 SEO Links) */}
           <div>
-            <h4 className="text-white font-bold mb-6">Contact Info</h4>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-center gap-3"><Phone size={16} className="text-primary" /> +91 6376228917</li>
-              <li className="flex items-center gap-3"><Mail size={16} className="text-primary" /> maheshkumar006376@gmail.com</li>
-              <li className="flex items-center gap-3"><MapPin size={18} className="text-primary" /> New Ashok Nagar Metro, Delhi</li>
+            <h4 className="text-white font-bold mb-6">More Searches</h4>
+            <ul className="space-y-3 text-sm">
+              {seoLinks.slice(3, 6).map((link, idx) => (
+                <li key={idx}>
+                  <Link to={`/${link.slug}`} className="hover:text-primary transition-colors flex items-center gap-2 group">
+                    <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                    <span className="text-sm">{link.name}</span>
+                  </Link>
+                </li>
+              ))}
+              
+              {/* Contact Info inside More Searches column */}
+              <li className="mt-6 pt-4 border-t border-white/10">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 text-sm">
+                    <Phone size={16} className="text-primary flex-shrink-0" /> 
+                    <span>+91 6376228917</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm">
+                    <Mail size={16} className="text-primary flex-shrink-0" /> 
+                    <span className="break-all">maheshkumar006376@gmail.com</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm">
+                    <MapPin size={18} className="text-primary flex-shrink-0" /> 
+                    <span>New Ashok Nagar Metro, Delhi</span>
+                  </div>
+                </div>
+              </li>
             </ul>
-            <div className="mt-8 p-4 bg-primary/10 rounded-2xl border border-primary/20">
-              <p className="text-xs text-primary font-bold mb-1 uppercase tracking-wider">Office Hours</p>
-              <p className="text-white text-sm">Mon - Sat: 9:00 AM - 9:00 PM</p>
-            </div>
           </div>
+          
         </div>
 
         <div className="mt-20 pt-8 border-t border-white/5 text-center text-xs uppercase tracking-widest">

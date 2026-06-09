@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 
 // Configuration
 $uploadDir = __DIR__ . '/uploads/';  // Absolute path
-$baseUrl = 'https://newashoknagarrooms.in/backend/uploads/';  // Change this to your actual domain
-
+// $baseUrl = 'https://newashoknagarrooms.in/backend/uploads/';  // Change this to your actual domain
+$baseUrl = 'http://localhost:8000/uploads/'; 
 // Create uploads directory if not exists
 if (!is_dir($uploadDir)) {
     mkdir($uploadDir, 0777, true);

@@ -62,11 +62,12 @@ export default function Navbar() {
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-bold text-lg md:text-xl tracking-tight">
-                  New Ashok <span className="text-primary">Nagar Rooms</span>
-                </span>
-                <span className="text-xs text-gray-500 hidden md:block">
-                  Best PG in Noida | Boys & Girls Hostel
-                </span>
+  New Ashok <span className="text-primary">Nagar Properties</span>
+</span>
+
+<span className="text-xs text-gray-500 hidden md:block">
+  Property Dealer in New Ashok Nagar | Buy, Sell & Rent Properties
+</span>
               </div>
             </Link>
 
